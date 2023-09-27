@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Calculadora de Consórcio</title>
+</head>
+<body>
+    <h1>Calculadora de Consórcio</h1>
+    <p>Informe os seguintes dados:</p>
+    <label for="numeroTotalPrestacoes">Número Total de Prestações:</label>
+    <input type="number" id="numeroTotalPrestacoes" placeholder="Número Total de Prestações"><br>
+    <label for="quantidadePrestacoesPagas">Quantidade de Prestações Pagas:</label>
+    <input type="number" id="quantidadePrestacoesPagas" placeholder="Quantidade de Prestações Pagas"><br>
+    <label for="valorPrestacao">Valor Atual da Prestação:</label>
+    <input type="number" id="valorPrestacao" placeholder="Valor da Prestação"><br>
+    <button onclick="calcular()">Calcular</button>
+
+    <h2>Resultado:</h2>
+    <p>Total Pago: R$ <span id="totalPago"></span></p>
+    <p>Saldo Devedor: R$ <span id="saldoDevedor"></span></p>
+
+    <script>
+        function calcular() {
+            var numeroTotalPrestacoes = parseInt(document.getElementById("numeroTotalPrestacoes").value);
+            var quantidadePrestacoesPagas = parseInt(document.getElementById("quantidadePrestacoesPagas").value);
+            var valorPrestacao = parseFloat(document.getElementById("valorPrestacao").value);
+
+            var totalPago = quantidadePrestacoesPagas * valorPrestacao;
+            var saldoDevedor = (numeroTotalPrestacoes - quantidadePrestacoesPagas) * valorPrestacao;
+
+            document.getElementById("totalPago").textContent = totalPago.toFixed(2);
+            document.getElementById("saldoDevedor").textContent = saldoDevedor.toFixed(2);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <p>Informe um número inteiro:</p>
+    <input type="number" id="numero" placeholder="Número inteiro">
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            var numero = parseInt(document.getElementById("numero").value);
+
+            var resultado = numero * numero; // Eleva o número ao quadrado
+
+            document.getElementById("resultado").textContent = "O quadrado de " + numero + " é " + resultado;
+        }
+    </script>
+</body>
+</html>

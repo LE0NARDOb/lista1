@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <p>Informe três números:</p>
+    <input type="number" id="numero1" placeholder="Número 1">
+    <input type="number" id="numero2" placeholder="Número 2">
+    <input type="number" id="numero3" placeholder="Número 3">
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            var num1 = parseFloat(document.getElementById("numero1").value);
+            var num2 = parseFloat(document.getElementById("numero2").value);
+            var num3 = parseFloat(document.getElementById("numero3").value);
+
+            var resultado = (num1 + num2) * num3;
+
+            document.getElementById("resultado").textContent = "Resultado: " + resultado;
+        }
+    </script>
+</body>
+</html>

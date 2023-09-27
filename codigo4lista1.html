@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Calculadora de Saldo</title>
+</head>
+<body>
+    <h1>Calculadora de Saldo</h1>
+    <p>Informe o valor do cheque que entrou:</p>
+    <input type="number" id="valorCheque" placeholder="Valor do Cheque">
+    <button onclick="calcularSaldo()">Calcular Saldo</button>
+    <p>Saldo Atual: R$ <span id="saldoAtual">500.00</span></p>
+
+    <script>
+        function calcularSaldo() {
+            var valorCheque = parseFloat(document.getElementById("valorCheque").value);
+            var saldoAtual = parseFloat(document.getElementById("saldoAtual").textContent);
+
+            var novoSaldo = saldoAtual + valorCheque;
+
+            document.getElementById("saldoAtual").textContent = novoSaldo.toFixed(2);
+        }
+    </script>
+</body>
+</html>
